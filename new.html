@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aravindan Kamatchi Sundaram - Resume</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+      background: white;
+      color: #333;
+      line-height: 1.6;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    /* Left Panel */
+    .left-panel {
+      width: 280px;
+      background: #f8f9fa;
+      border-right: 1px solid #e9ecef;
+      padding: 2rem 1rem;
+      position: fixed;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .profile-section {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .profile-picture {
+      width: 220px;
+      height: 220px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: #666;
+      margin: 0 auto 1.5rem;
+      border: 4px solid #1976d2;
+      overflow: hidden;
+    }
+
+    .profile-picture img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .profile-name {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1976d2;
+      margin-bottom: 0.5rem;
+    }
+
+    .profile-title {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      color: #1976d2;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      font-size: 0.9rem;
+    }
+
+    .email-link {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      font-size: 0.9rem;
+    }
+
+    .email-link:hover {
+      background-color: #e3f2fd;
+    }
+
+    .email-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .email-label {
+      font-weight: bold;
+      color: #1976d2;
+      font-size: 0.9rem;
+    }
+
+    .email-address {
+      color: #1976d2;
+      text-decoration: none;
+      font-size: 0.85rem;
+      word-break: break-all;
+    }
+
+    .email-address:hover {
+      text-decoration: underline;
+    }
+
+    .social-link:hover {
+      background-color: #e3f2fd;
+    }
+
+    .social-link img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .email-link img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .contact-info-left {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .contact-info-left .contact-item-left {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .contact-info-left .contact-item-left a {
+      color: #1976d2;
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .contact-info-left .contact-item-left a:hover {
+      text-decoration: underline;
+    }
+
+    /* Right Panel */
+    .right-panel {
+      width: 200px;
+      background: #f8f9fa;
+      border-left: 1px solid #e9ecef;
+      padding: 2rem 1.5rem;
+      position: fixed;
+      right: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .nav-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1976d2;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .nav-link {
+      color: #666;
+      text-decoration: none;
+      padding: 0.5rem;
+      border-radius: 5px;
+      transition: all 0.3s;
+      font-size: 0.9rem;
+    }
+
+    .nav-link:hover {
+      background-color: #e3f2fd;
+      color: #1976d2;
+    }
+
+    .nav-link.active {
+      background-color: #1976d2;
+      color: white;
+    }
+
+    .contact-section {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .contact-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1976d2;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .contact-info-right {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .contact-item-right {
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.4;
+    }
+
+    .contact-item-right a {
+      color: #1976d2;
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .contact-item-right a:hover {
+      text-decoration: underline;
+    }
+
+    /* Middle Panel */
+    .middle-panel {
+      flex: 1;
+      margin-left: 280px;
+      margin-right: 200px;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 2rem;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+      scroll-margin-top: 2rem;
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      color: #1976d2;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e3f2fd;
+    }
+
+    .section p {
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+
+    .section p a {
+      color: #1976d2;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .section p a:hover {
+      color: #1565c0;
+      text-decoration: underline;
+    }
+
+    .publication-item,
+    .course-item,
+    .project-item {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border-left: 4px solid #1976d2;
+    }
+
+    .publication-item h4,
+    .project-item h4 {
+      color: #1976d2;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .publication-item .authors,
+    .publication-item .venue {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .publications-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .publication-card {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid #1976d2;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .publication-image {
+      width: 100%;
+      height: 380px;
+      background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: #1976d2;
+      margin-bottom: 1rem;
+      border: 2px dashed #1976d2;
+    }
+
+    .publication-card h4 {
+      color: #1976d2;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .publication-card h4 a {
+      color: #1976d2;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .publication-card h4 a:hover {
+      color: #1565c0;
+      text-decoration: underline;
+    }
+
+    .publication-image a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      transition: opacity 0.3s ease;
+    }
+
+    .publication-image a:hover {
+      opacity: 0.9;
+    }
+
+    .publication-card .authors,
+    .publication-card .venue {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .patent-item {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border-left: 4px solid #1976d2;
+    }
+
+    .patent-item h4 {
+      color: #1976d2;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .patent-item .patent-number,
+    .patent-item .patent-status {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .news-container {
+      height: 500px;
+      overflow-y: auto;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      border-radius: 20px;
+      padding: 2.5rem;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .news-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #1976d2, #3b82f6, #60a5fa);
+      border-radius: 20px 20px 0 0;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 3rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 20px;
+      width: 4px;
+      background: linear-gradient(180deg, #1976d2 0%, #3b82f6 50%, #60a5fa 100%);
+      border-radius: 2px;
+      box-shadow: 0 0 10px rgba(25,118,210,0.3);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+      padding-left: 2.5rem;
+      background: white;
+      border-radius: 12px;
+      padding: 1rem 1rem 1rem 3rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      border-left: 4px solid #1976d2;
+      transition: all 0.3s ease;
+    }
+
+    .timeline-item:hover {
+      transform: translateX(5px);
+      box-shadow: 0 8px 25px rgba(25,118,210,0.15);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -14px;
+      top: 20px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1976d2, #3b82f6);
+      border: 4px solid white;
+      box-shadow: 0 0 0 4px #1976d2, 0 4px 10px rgba(25,118,210,0.3);
+      z-index: 2;
+    }
+
+
+
+    .timeline-date {
+      font-size: 0.85rem;
+      color: white;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      background: linear-gradient(135deg, #1976d2, #3b82f6);
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      display: inline-block;
+      box-shadow: 0 2px 8px rgba(25,118,210,0.3);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .timeline-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.6rem;
+      background: linear-gradient(135deg, #1976d2, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .timeline-description {
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.5;
+      padding-left: 1rem;
+      border-left: 3px solid #e2e8f0;
+      position: relative;
+    }
+
+    .timeline-description::before {
+      content: '📍';
+      position: absolute;
+      left: -12px;
+      top: 0;
+      background: white;
+      padding: 0 4px;
+    }
+
+    .course-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .course-item {
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .project-links {
+      margin-top: 0.8rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .project-link {
+      background: #1976d2;
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: background-color 0.3s;
+    }
+
+    .project-link:hover {
+      background: #1565c0;
+    }
+
+    .collapsible-header {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      user-select: none;
+    }
+
+    .collapsible-header:hover {
+      color: #1565c0;
+    }
+
+    .collapse-icon {
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+      color: #1976d2;
+    }
+
+    .collapse-icon.expanded {
+      transform: rotate(180deg);
+    }
+
+    .projects-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-out;
+    }
+
+    .projects-content.expanded {
+      max-height: 2000px;
+      transition: max-height 0.5s ease-in;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .left-panel,
+      .right-panel {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+
+      .middle-panel {
+        margin: 0;
+        height: auto;
+      }
+
+      .left-panel {
+        order: 1;
+      }
+
+      .middle-panel {
+        order: 2;
+      }
+
+      .right-panel {
+        order: 3;
+      }
+
+      .publications-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Left Panel -->
+    <div class="left-panel">
+      <div class="profile-section">
+        <div class="profile-picture">
+          <img src="avvy.jpeg" alt="Aravindan Kamatchi Sundaram">
+        </div>
+        <div class="profile-name">Aravindan Kamatchi Sundaram</div>
+        <div class="profile-title">Research Scientist<br>IIT Madras</div>
+      </div>
+
+      
+      <div class="social-links">
+        <div class="email-link">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Email">
+          <div class="email-content">
+            <span class="email-label">Academic:</span>
+            <a href="mailto:mm21b010@smail.iitm.ac.in" class="email-address">mm21b010@smail.iitm.ac.in</a>
+          </div>
+        </div>
+        <div class="email-link">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Email">
+          <div class="email-content">
+            <span class="email-label">Personal:</span>
+            <a href="mailto:theactuallyavvy@gmail.com" class="email-address">theactuallyavvy@gmail.com</a>
+          </div>
+        </div>
+        <a href="https://drive.google.com/file/d/1lb5d8vroZsL8_Sea5hKWMln1rfoGXL4w/view?usp=sharing" target="_blank" class="social-link">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/googledrive.svg" alt="Resume">
+          Resume
+        </a>
+        <a href="https://www.linkedin.com/in/aravindan-kamatchi-sundaram/" target="_blank" class="social-link">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn">
+          LinkedIn
+        </a>
+        <a href="https://github.com/AravindanIITM18" target="_blank" class="social-link">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub">
+          GitHub
+        </a>
+        <a href="#" class="social-link">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/googlescholar.svg" alt="Google Scholar">
+          Google Scholar
+        </a>
+        <a href="https://orcid.org/0009-0008-7007-006X" target="_blank" class="social-link">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/orcid.svg" alt="ORCID">
+          ORCID
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="right-panel">
+      <div class="nav-title">Navigation</div>
+      <div class="nav-links">
+        <a href="#about" class="nav-link">About Me</a>
+        <a href="#publications" class="nav-link">Publications</a>
+        <a href="#patents" class="nav-link">Patents</a>
+        <a href="#news" class="nav-link">News</a>
+        <a href="#projects" class="nav-link">Course Projects</a>
+      </div>
+    </div>
+
+    <!-- Middle Panel -->
+    <div class="middle-panel">
+      <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>Hello! I am Aravindan Kamatchi Sundaram, an interdisciplinary dual-degree student (B.Tech in Metallurgical and Materials Engineering + M.Tech in Data Science) at the Indian Institute of Technology Madras. I am currently pursuing my final year thesis in Adobe under the guidance of <a href="https://research.adobe.com/person/aishwarya-agarwal/" target="_blank">Aishwarya Agarwal</a> and <a href="https://research.adobe.com/person/balaji-vasan-srinivasan/" target="_blank">Dr. Balaji Vasan Srinivasan</a>. Previously, I had worked for two years in the <a href="https://rohitbatra1989.wixsite.com/rbatra" target="_blank">Materials Informatics Lab at IIT Madras</a> under the guidance of <a href="https://rbcdsai.iitm.ac.in/people/rohit-batra/" target="_blank">Dr. Rohit Batra</a>; first as a <a href="https://yrf.iitm.ac.in/index.html" target="_blank">Young Research Fellow</a> and later as an undergraduate researcher. In addition, I have completed two research internships at <a href="https://research.adobe.com/research/computer-vision-imaging-video/" target="_blank">Adobe's Multimodal Intelligence Lab</a>, mentored by <a href="https://research.adobe.com/person/balaji-vasan-srinivasan/" target="_blank">Dr. Balaji Vasan Srinivasan</a>, <a href="https://research.adobe.com/person/srikrishna-karanam/" target="_blank">Dr. Srikrishna Karanam</a>, and <a href="https://research.adobe.com/person/aishwarya-agarwal/" target="_blank">Aishwarya Agarwal</a>.</p>
+        <p>Broadly, I am interested in exploring applications of generative AI and developing computational tools to accelerate materials discovery. As part of my two internships at Adobe's Multimodal Intelligence Labs, I have worked on improving text-to-image synthesis in diffusion models and domain specialization of multimodal large language models for improved design layout understanding. In the Materials Informatics Lab at IIT Madras, I have worked on developing an LLM-based workflow for constructing a high-entropy alloy database that can aid computational materials discovery.</p>
+        <p>I am interested in pursuing a Ph.D. and am looking for labs and research groups that work on pushing the boundaries of generative AI for various applications particularly in Computer Vision and Materials Science. If our interests align or you want to have a discussion, do connect!</p>
+      </section>
+
+      <section id="publications" class="section">
+        <h2>Publications</h2>
+        
+        <div class="publications-grid">
+          <div class="publication-card">
+            <div class="publication-image">
+              <a href="https://arxiv.org/abs/2411.16783" target="_blank">
+                <img src="cocono.png" alt="CoCoNO Research Paper" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; border-radius: 6px;">
+              </a>
+            </div>
+            <h4><a href="https://arxiv.org/abs/2411.16783" target="_blank">CoCoNO: Attention Contrast-and-Complete for Noise Optimization in T2I Synthesis</a></h4>
+            <div class="authors">A. Kamatchi Sundaram, et al.</div>
+            <div class="venue">ACM Multimedia 2025 (A* Conference) - Accepted</div>
+            <p>Developed CoCoNO, a training-free framework addressing subject mixing & neglect in diffusion models. Achieved SOTA results on Stable Diffusion v2.1: 76% VQAScore, 80% CLIP-TT across benchmarks.</p>
+          </div>
+
+          <div class="publication-card">
+            <div class="publication-image">
+              <a href="https://drive.google.com/file/d/1BRGXsKXRBYR8y5k19WyKgmOPSMkr7AeY/view?usp=sharing" target="_blank">
+                <img src="meta2.png" alt="High Entropy Alloy Research" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; border-radius: 6px;">
+              </a>
+            </div>
+            <h4><a href="https://drive.google.com/file/d/1BRGXsKXRBYR8y5k19WyKgmOPSMkr7AeY/view?usp=sharing" target="_blank">High Entropy Alloy Database using LLMs</a></h4>
+            <div class="authors">A. Kamatchi Sundaram, R. Batra</div>
+            <div class="venue">In Review - 2025</div>
+            <p>Created the largest public HEA dataset with 180k+ records from 10k+ research articles using LLM-based extraction pipeline, achieving ~0.90 F1 on text and ~0.95 F1 on tables.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="patents" class="section">
+        <h2>Patents</h2>
+        
+        <div class="patent-item">
+          <h4>Smart Design: Fix Layout Issues as You Create</h4>
+          <div class="patent-number">Patent Application Filed - 2025</div>
+          <div class="patent-status">Status: Filed (US Patent Office)</div>
+          <p>Developed a smart layout correction system that auto-propagates corrections across design elements in Adobe Express. Built a scalable data curation pipeline generating 650,000+ datapoints for multi-modal fine-tuning. Improved FID by 50% and VLM-as-judge scores by 33%, demonstrating workflow effectiveness.</p>
+        </div>
+
+        <div class="patent-item">
+          <h4>CoCoNO: Attention Contrast-and-Complete for Noise Optimization in T2I Synthesis</h4>
+          <div class="patent-number">US Patent Granted - 2024</div>
+          <div class="patent-status">Status: Granted</div>
+          <p>US patent granted for CoCoNO, a training-free framework addressing subject mixing & neglect in diffusion models. Novel attention-based contrast and completion losses for accurate noun representation in text-to-image synthesis.</p>
+        </div>
+      </section>
+
+      <section id="news" class="section">
+        <h2>News & Updates</h2>
+        
+        <div class="news-container">
+          <div class="timeline">
+      
+            <div class="timeline-item">
+              <div class="timeline-date">August 2025</div>
+              <div class="timeline-title">Master’s Thesis at Adobe</div>
+              <div class="timeline-description">Started M.Tech thesis at Adobe Research in the Multimodal Intelligence Lab.</div>
+            </div>
+      
+            <div class="timeline-item">
+              <div class="timeline-date">July 2025</div>
+              <div class="timeline-title">AI4X 2025 Oral Presentation</div>
+              <div class="timeline-description">Delivered oral presentation at AI4X 2025 in Singapore on building a large-scale high-entropy alloy database using LLMs.</div>
+            </div>
+      
+            <div class="timeline-item">
+              <div class="timeline-date">July 2025</div>
+              <div class="timeline-title">Paper Accepted at ACM Multimedia 2025</div>
+              <div class="timeline-description">First internship paper "CoCoNO" accepted at ACM Multimedia 2025.</div>
+            </div>
+      
+            <div class="timeline-item">
+              <div class="timeline-date">May 2025</div>
+              <div class="timeline-title">2nd Adobe Research Internship Started</div>
+              <div class="timeline-description">Started re-internship at Adobe Research in the Multimodal Intelligence Lab.</div>
+            </div>
+      
+            <div class="timeline-item">
+              <div class="timeline-date">April 2025</div>
+              <div class="timeline-title">AI4X Oral Talk Accepted</div>
+              <div class="timeline-description">Oral talk on high-entropy alloy database using LLMs accepted at AI4X 2025, National University of Singapore.</div>
+            </div>
+      
+            <div class="timeline-item">
+              <div class="timeline-date">December 2024</div>
+              <div class="timeline-title">Offered M.Tech in Data Science</div>
+              <div class="timeline-description">Upgraded from B.Tech to Dual Degree (B.Tech + M.Tech in Data Science) based on exceptional academic performance.</div>
+            </div>
+      
+            <div class="timeline-item">
+              <div class="timeline-date">October 2024</div>
+              <div class="timeline-title">Patent Granted</div>
+              <div class="timeline-description">Patent application from Adobe internship accepted and granted.</div>
+            </div>
+      
+            <div class="timeline-item">
+              <div class="timeline-date">September 2024</div>
+              <div class="timeline-title">YRF Poster Presentation</div>
+              <div class="timeline-description">Presented research outcomes at the Young Research Fellow poster event at IIT Madras.</div>
+            </div>
+      
+            <div class="timeline-item">
+              <div class="timeline-date">August 2024</div>
+              <div class="timeline-title">Undergraduate Researcher</div>
+              <div class="timeline-description">Joined the Materials Informatics Lab as an undergraduate researcher under Dr. Rohit Batra.</div>
+            </div>
+      
+            <div class="timeline-item">
+              <div class="timeline-date">July 2024</div>
+              <div class="timeline-title">Patent Filed</div>
+              <div class="timeline-description">Filed patent application for an innovation developed during the Adobe internship.</div>
+            </div>
+      
+            <div class="timeline-item">
+              <div class="timeline-date">May 2024</div>
+              <div class="timeline-title">Adobe Research Internship Started</div>
+              <div class="timeline-description">Began summer internship at Adobe Research focusing on generative AI and design automation.</div>
+            </div>
+      
+            <div class="timeline-item">
+              <div class="timeline-date">March 2024</div>
+              <div class="timeline-title">Satish Pai Prize Awarded</div>
+              <div class="timeline-description">Received the Satish Pai Prize for achieving the highest CGPA in the department.</div>
+            </div>
+      
+            <div class="timeline-item">
+              <div class="timeline-date">July 2023</div>
+              <div class="timeline-title">Young Research Fellow Selected</div>
+              <div class="timeline-description">Selected as one among 30 Young Research Fellows from over 500 applicants under Dr. Rohit Batra at the Materials Informatics Lab.</div>
+            </div>
+      
+            <div class="timeline-item">
+              <div class="timeline-date">November 2021</div>
+              <div class="timeline-title">Joined IIT Madras</div>
+              <div class="timeline-description">Admitted as a B.Tech student in Metallurgical and Materials Engineering at IIT Madras.</div>
+            </div>
+      
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <h2 class="collapsible-header" onclick="toggleProjects()">
+          Course Projects
+          <span class="collapse-icon">▼</span>
+        </h2>
+        
+        <div class="projects-content" id="projects-content">
+        <div class="project-item">
+          <h4>MLOps - Cricket Fantasy Score Prediction</h4>
+          <p>Built a dockerized AI application for cricket fantasy score prediction with data in PostgreSQL, Apache airflow for managing the CI/CD, DVC for pipeline and model versioning, MLflow for experiment tracking, Prometheus for monitoring and Grafana for visualization.</p>
+          <div class="project-links">
+            <a href="#" class="project-link">GitHub</a>
+            <a href="#" class="project-link">Demo</a>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <h4>MLOps - Automated Image-Caption Pipeline</h4>
+          <p>Developed an automated image-caption pipeline by scraping Google News using Python (BeautifulSoup, Selenium) and PostgreSQL with de-duplication, scheduling with Apache Airflow DAGs for orchestration, lazy-loading, and email alerts via SMTP and a UI for visualization.</p>
+          <div class="project-links">
+            <a href="#" class="project-link">GitHub</a>
+            <a href="#" class="project-link">Documentation</a>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <h4>Computer Vision - SPAD Depth Estimation</h4>
+          <p>Secured 3rd place among 47 in a SPAD Depth Estimation Kaggle competition, exploring model architectures and denoising strategies.</p>
+          <div class="project-links">
+            <a href="#" class="project-link">GitHub</a>
+            <a href="#" class="project-link">Kaggle</a>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <h4>Computer Vision - Edge Detection</h4>
+          <p>Fine-tuned pre-trained VGG16 with multiscale side-outputs on the BSDS500 dataset, achieving state-of-the-art edge detection.</p>
+          <div class="project-links">
+            <a href="#" class="project-link">GitHub</a>
+            <a href="#" class="project-link">Results</a>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <h4>Deep Learning - Transliteration Models</h4>
+          <p>Implemented RNN, LSTM, and GRU-based seq2seq models with and without attention for transliteration on the Dakshina dataset, performing hyperparameter sweeps with Weights & Biases, and visualizing attention heatmaps to analyze model behavior.</p>
+          <div class="project-links">
+            <a href="#" class="project-link">GitHub</a>
+            <a href="#" class="project-link">W&B</a>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <h4>Deep Learning - Neural Network from Scratch</h4>
+          <p>Implemented a feedforward neural network, backpropagation, and optimizers from scratch in NumPy for classification on Fashion-MNIST.</p>
+          <div class="project-links">
+            <a href="#" class="project-link">GitHub</a>
+            <a href="#" class="project-link">Notebook</a>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <h4>Deep Learning - GoogLeNet Transfer Learning</h4>
+          <p>Fine-tuned pre-trained GoogLeNet with layer freezing and dropout, showing gains over scratch-trained models via filter visualizations.</p>
+          <div class="project-links">
+            <a href="#" class="project-link">GitHub</a>
+            <a href="#" class="project-link">Report</a>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <h4>ML Foundations - Time Series Analysis</h4>
+          <p>Implemented Lomb-Scargle periodogram for time series analysis and compared its predictions with ARIMA on Tesla stock price data.</p>
+          <div class="project-links">
+            <a href="#" class="project-link">GitHub</a>
+            <a href="#" class="project-link">Analysis</a>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <h4>ML Foundations - Spam Classification</h4>
+          <p>Trained a scratch-built Naive Bayes spam classifier, mitigating class imbalance via upsampling, feature augmentation etc. scoring F1 ~0.85</p>
+          <div class="project-links">
+            <a href="#" class="project-link">GitHub</a>
+            <a href="#" class="project-link">Results</a>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <h4>Materials Modeling - SageMath Interactive</h4>
+          <p>Created SageMath interactives to understand the heat transfer equation as a teaching assistant for transport phenomena in materials.</p>
+          <div class="project-links">
+            <a href="#" class="project-link">GitHub</a>
+            <a href="#" class="project-link">Interactive</a>
+          </div>
+        </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Update active navigation link on scroll
+    const sections = document.querySelectorAll('.section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    function updateActiveNav() {
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if (document.querySelector('.middle-panel').scrollTop >= sectionTop - 100) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    // Listen for scroll events on the middle panel
+    document.querySelector('.middle-panel').addEventListener('scroll', updateActiveNav);
+    
+    // Initialize active nav
+    updateActiveNav();
+
+    // Toggle projects section
+    function toggleProjects() {
+      const content = document.getElementById('projects-content');
+      const icon = document.querySelector('.collapse-icon');
+      
+      if (content.classList.contains('expanded')) {
+        content.classList.remove('expanded');
+        icon.classList.remove('expanded');
+      } else {
+        content.classList.add('expanded');
+        icon.classList.add('expanded');
+      }
+    }
+  </script>
+</body>
+</html> 
