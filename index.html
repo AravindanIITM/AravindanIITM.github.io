@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aravindan Kamatchi Sundaram</title>
+  <title>Aravindan Kamatchi Sundaram - Resume</title>
   <style>
     * {
       margin: 0;
@@ -583,36 +583,166 @@
 
     /* Responsive Design */
     @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
+      body {
+        overflow: auto;
       }
 
-      .left-panel,
+      .container {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .left-panel {
+        position: relative;
+        width: 100%;
+        height: auto;
+        order: 1;
+        padding: 1.5rem 1rem;
+        border-right: none;
+        border-bottom: 1px solid #e9ecef;
+      }
+
+      .profile-section {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .profile-picture {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+        margin: 0;
+        flex-shrink: 0;
+      }
+
+      .profile-info {
+        flex: 1;
+      }
+
+      .profile-name {
+        font-size: 1.1rem;
+        margin-bottom: 0.3rem;
+      }
+
+      .profile-title {
+        font-size: 0.85rem;
+        margin-bottom: 0;
+      }
+
+      .social-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 0.5rem;
+      }
+
+      .social-link,
+      .email-link {
+        font-size: 0.8rem;
+        padding: 0.4rem;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .email-content {
+        text-align: center;
+      }
+
+      .email-label {
+        font-size: 0.75rem;
+      }
+
+      .email-address {
+        font-size: 0.7rem;
+      }
+
       .right-panel {
         position: relative;
         width: 100%;
         height: auto;
+        order: 2;
+        padding: 1rem;
+        border-left: none;
+        border-bottom: 1px solid #e9ecef;
+        background: #e3f2fd;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+      }
+
+      .nav-link {
+        padding: 0.5rem 1rem;
+        background: white;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        border: 1px solid #1976d2;
+      }
+
+      .nav-link.active {
+        background: #1976d2;
+        color: white;
       }
 
       .middle-panel {
         margin: 0;
         height: auto;
-      }
-
-      .left-panel {
-        order: 1;
-      }
-
-      .middle-panel {
-        order: 2;
-      }
-
-      .right-panel {
         order: 3;
+        padding: 1.5rem 1rem;
       }
 
       .publications-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .publication-image {
+        height: 200px;
+      }
+
+      .news-container {
+        height: 300px;
+        padding: 1.5rem;
+      }
+
+      .timeline {
+        padding-left: 2rem;
+      }
+
+      .timeline-item {
+        padding: 0.8rem 0.8rem 0.8rem 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .timeline-item::before {
+        left: -12px;
+        top: 15px;
+        width: 16px;
+        height: 16px;
+      }
+
+      .section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .project-item,
+      .patent-item {
+        padding: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .project-links {
+        gap: 0.3rem;
+      }
+
+      .project-link {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.6rem;
       }
     }
   </style>
@@ -625,8 +755,10 @@
         <div class="profile-picture">
           <img src="avvy.jpeg" alt="Aravindan Kamatchi Sundaram">
         </div>
-        <div class="profile-name">Aravindan Kamatchi Sundaram</div>
-        <div class="profile-title">Dual Degree Student<br>IIT Madras</div>
+        <div class="profile-info">
+          <div class="profile-name">Aravindan Kamatchi Sundaram</div>
+          <div class="profile-title">Research Scientist<br>IIT Madras</div>
+        </div>
       </div>
 
       
