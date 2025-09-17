@@ -669,12 +669,14 @@
         border-bottom: 1px solid #e9ecef;
         background: #f8f9fa;
         z-index: 100;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease-out;
+        transform: translateZ(0); /* Force hardware acceleration */
+        will-change: transform, padding, background;
       }
 
       .left-panel.shrunk {
         padding: 0.8rem 4rem 0.8rem 1rem;
-        background: rgba(248,249,250,0.95);
+        background: rgba(248,249,250,0.98);
         backdrop-filter: blur(10px);
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       }
@@ -684,7 +686,8 @@
         align-items: center;
         gap: 1rem;
         margin-bottom: 1.5rem;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease-out;
+        transform: translateZ(0); /* Force hardware acceleration */
       }
 
       .left-panel.shrunk .profile-section {
@@ -697,7 +700,8 @@
         font-size: 2rem;
         margin: 0;
         flex-shrink: 0;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease-out;
+        transform: translateZ(0); /* Force hardware acceleration */
       }
 
       .left-panel.shrunk .profile-picture {
@@ -708,13 +712,14 @@
 
       .profile-info {
         flex: 1;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease-out;
+        transform: translateZ(0); /* Force hardware acceleration */
       }
 
       .profile-name {
         font-size: 1.1rem;
         margin-bottom: 0.3rem;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease-out;
       }
 
       .left-panel.shrunk .profile-name {
@@ -725,22 +730,31 @@
       .profile-title {
         font-size: 0.85rem;
         margin-bottom: 0;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease-out;
       }
 
       .left-panel.shrunk .profile-title {
-        display: none;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
       }
 
       .social-links {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         gap: 0.5rem;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease-out;
+        transform: translateZ(0); /* Force hardware acceleration */
       }
 
       .left-panel.shrunk .social-links {
-        display: none;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
       }
 
       .social-link,
@@ -772,6 +786,8 @@
         height: auto;
         order: 2;
         padding: 1.5rem 1rem;
+        transform: translateZ(0); /* Force hardware acceleration */
+        will-change: transform;
       }
 
       .publications-grid {
@@ -1242,16 +1258,39 @@
     }
 
     // Mobile scroll shrinking for left panel
+    let isScrolling = false;
+    let scrollTimeout;
+    
     function handleMobileScroll() {
       if (window.innerWidth <= 768) {
         const leftPanel = document.querySelector('.left-panel');
         const scrollPosition = window.scrollY;
         
-        if (scrollPosition > 100) {
-          leftPanel.classList.add('shrunk');
-        } else {
-          leftPanel.classList.remove('shrunk');
+        // Debounce scroll events for better performance
+        if (!isScrolling) {
+          window.requestAnimationFrame(() => {
+            // Reduced threshold for earlier activation
+            if (scrollPosition > 50) {
+              leftPanel.classList.add('shrunk');
+            } else {
+              leftPanel.classList.remove('shrunk');
+            }
+            isScrolling = false;
+          });
+          isScrolling = true;
         }
+        
+        // Clear existing timeout
+        clearTimeout(scrollTimeout);
+        
+        // Set a timeout to ensure final state is applied
+        scrollTimeout = setTimeout(() => {
+          if (scrollPosition > 50) {
+            leftPanel.classList.add('shrunk');
+          } else {
+            leftPanel.classList.remove('shrunk');
+          }
+        }, 100);
       }
     }
 
